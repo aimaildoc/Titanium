@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "DestroyerX AutoCheckouter",
+  "description": "Generate and autofill card informations for Stripe Checkout - Made by DestroyerX.",
+  "version": "1.1",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs",
+    "notifications",
+    "webRequest",
+    "webRequestBlocking",
+    "scripting",
+    "https://hook.eu2.make.com/1d7wn92xat3k6runtlkinwfgkox1rrfu"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "icons": {
+    "128": "icons/icon.png"
+  },
+  "action": {
+    "default_icon": {
+      "128": "icons/icon.png"
+    }
+  },
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/iconi.png"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "options_page": "options.html"
+}
